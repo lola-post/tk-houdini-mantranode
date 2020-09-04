@@ -27,7 +27,8 @@ class TkMantraNodeApp(sgtk.platform.Application):
         self.handler = tk_houdini_mantra.TkMantraNodeHandler(self)
 
         # Add the app path to HOUDINI_PATH
-        sgtk.util.prepend_path_to_env_var("HOUDINI_PATH", os.path.dirname(__file__))
+        houdini_path = (os.path.dirname(__file__)).replace("\\", "/")
+        sgtk.util.prepend_path_to_env_var("HOUDINI_PATH", houdini_path)
 
     def convert_to_regular_mantra_nodes(self):
         """Convert Toolkit Mantra nodes to regular Mantra nodes.
