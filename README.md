@@ -19,3 +19,7 @@ click here: https://support.shotgunsoftware.com/entries/95441247.
 
 ## Have a Question?
 Don't hesitate to contact us! You can find us on support@shotgunsoftware.com
+
+## Installation
+The easiest way to install this app is to replace the stock mantranode app that comes with Shotgun Toolkit.
+To do this, edit app_location.yml in env\includes 

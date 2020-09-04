@@ -14,6 +14,8 @@ Mantra Output node App for use with Toolkit's Houdini engine.
 
 import sgtk
 
+import os
+
 
 class TkMantraNodeApp(sgtk.platform.Application):
     """The Mantra Output Node."""
@@ -23,6 +25,9 @@ class TkMantraNodeApp(sgtk.platform.Application):
 
         tk_houdini_mantra = self.import_module("tk_houdini_mantranode")
         self.handler = tk_houdini_mantra.TkMantraNodeHandler(self)
+
+        # Add the app path to HOUDINI_PATH
+        sgtk.util.prepend_path_to_env_var("HOUDINI_PATH", os.path.dirname(__file__))
 
     def convert_to_regular_mantra_nodes(self):
         """Convert Toolkit Mantra nodes to regular Mantra nodes.
